@@ -30,7 +30,9 @@
 </head>
 
 <body>
-    <header>
+    <!-- This div pushes down header a little bit so that header is not sticky from start -->
+    <div class="header-push-down"></div>
+    <header class="blur disable-selection">
         <nav>
             <div class="left">
                 <img src="images/icon/icon.png" alt="OpenCodeEra logo" />
@@ -40,23 +42,20 @@
             <div class="right">
                 <ul>
                     <li>
-                        <a href="index.html" target="_self">Home</a>
+                        <a class="about" href="#about">About</a>
                     </li>
                     <li>
-                        <a href="#about" target="_self">About</a>
+                        <a class="contact-us" href="#contact">Contact Us</a>
                     </li>
                     <li>
-                        <a href="contact.html" target="_self">Contact us</a>
-                    </li>
-                    <li>
-                        <a href="services.html" target="_self"> Services</a>
+                        <a class="services" href="services.html"> Services</a>
                     </li>
                 </ul>
             </div>
-        </nav>
+        </nav>   
     </header>
-    <main>
-        <section class="firstsection">
+    <main class="blur">
+        <section class="firstsection disable-selection">
             <div class="leftSection">
                 <div class="white">
                     <span class="blue">Welcome! </span>Contributors,
@@ -70,19 +69,53 @@
         </section>
         <hr>
         <section class="secondSection" id="about">
-            <div class="leftSection">
-                <img src="images/goals.png" alt="goals">
+
+            <div class="second-section-container">
+                  <div class="leftSection">
+                    <!-- image from template.net -->
+                    <img src="images/illustrations/goals.png" alt="goals">
             </div>
-            <div class="rightSection">
-                <h1>Our Mission</h1>
-                <span class="text-gradient-blue-white">
-                    Open Code Era is an initiative to foster a culture of open source coding among developer
-                    community.
-                </span>
+
+                <div class="rightSection"> 
+                    <h2>Our Mission</h2>
+                    <span class="text-gradient-blue-white">
+                        <p>Open Code Era fosters open source culture, encouraging collaboration in software development within the developer community.</p>
+                    </span>
+                </div> 
             </div>
+
+        </section>
+        <hr>
+        <section class="contactSection" id="contact">
+            <div class="leftContact">
+                <h2>Get in Touch!</h2>
+                <p>If you have any questions or inquiries, please feel free to get in touch with us.</p>
+                <!-- image from freepik -->
+                <img src="./images/illustrations/Get in touch.png" alt="Get In Touch">
+            </div>
+            <div class="rightContact">
+                <form id="messageForm">
+                    <input type="text" id="name" name="name" placeholder="Name" >
+    
+                    <input type="text" id="email" name="email" placeholder="Email" >
+    
+                    <textarea id="message" name="message" rows="8" placeholder="Message"></textarea>
+    
+                    <button id="submit" type="submit" onclick="toggle('body')">Submit</button>
+                </form>
+                
+            </div>
+ 
+     
         </section>
     </main>
-    <footer>
+    <div id="popup">
+        <h2>Email Contact Service Inactive</h2><br>
+        <p>We apologize for the inconvenience, our email service is currently inactive. You may reach out to us through our social handles. Rest assured, the message you intended to send via email is stored on your side, ready to be sent once the service is activated. </p><br>
+        <button id="close" onclick="toggle()">Close</button>
+    </div>
+
+    <footer class="blur disable-selection">
         <div class="footer">
             <div class="footer-first">
                 <h3>Open Code Era</h3>
@@ -105,21 +138,18 @@
             <div class="footer-third">
                 
             </div>
-            <div class="footer-fouth">
-               
+            <div class="footer-fourth">
+                <a href="https://github.com/OpenCodeEra/OpenCodeEra">
+                    <img src="images/logo/github-logo.svg" alt="github-logo">
+                    &nbsp; Improve this page on GitHub
+                </a> 
             </div>
         </div>
         <div class="footer-rights">
-            Copyright &#169 www.opencodeera.com | All Rights Reserved
+            Copyright &#169 opencodeera.pages.dev | All Rights Reserved
         </div>
     </footer>
-    <!-- Setup for text animation! -->
-    <script>
-        var typed = new Typed('#element', {
-            strings: ['Projects', 'Community', 'Innovation', 'Contribution'],
-            typeSpeed: 50,
-        });
-    </script>
+    <script src="./javascript/index.js"></script>
 </body>
 
 </html>
